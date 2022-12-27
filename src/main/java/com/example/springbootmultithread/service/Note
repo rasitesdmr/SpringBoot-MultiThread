@@ -1,0 +1,31 @@
+UserService
+
+                                        CompletableFuture ?
+
+1-) CompletableFuture, asenkron görevleri engellemesiz bir şekilde oluşturmanıza ve yürütmenize olanak tanır ve birden
+fazla asenkron görevi bir araya getirmek, birleştirmek ve zincirlemek için yöntemler sağlar. Ayrıca, asenkron görev
+başarıyla veya istisnai olarak tamamlandığında yürütülecek bir geri arama kaydetmenize de olanak tanır.
+
+
+                                          BufferedReader ?
+
+1-) BufferedReader, java.io paketinde yer alan ve karakter giriş akışından tamponlanmış bir şekilde metin okumanızı
+sağlayan bir sınıftır. Giriş akışından metin satırlarını, karakterleri ve karakter dizilerini okumak için yöntemler
+sağlar.
+
+2-) BufferedReader, verileri her seferinde bir karakter okumak yerine parçalar halinde (tampon olarak adlandırılır)
+okuduğu için büyük miktarda metni verimli bir şekilde okumak için kullanışlıdır. Bu, büyük dosyaları okurken
+uygulamanızın performansını önemli ölçüde artırabilir.
+
+                                         InputStreamReader ?
+
+1-) InputStreamReader'ı bir giriş akışından her seferinde bir karakter okumak için kullanabilir veya metin satırlarını
+daha verimli bir şekilde okumak için bir BufferedReader ile birlikte kullanabilirsiniz.
+
+                                                split ?
+
+1-) Bu kodda, String sınıfının split yöntemi, bir dizeyi belirtilen bir sınırlayıcıya göre bir alt dizeler dizisine
+bölmek için kullanılmaktadır. Sınırlayıcı, split yöntemine String bağımsız değişkeni olarak belirtilir.
+
+2-) Örneğin, virgülle ayrılmış değerlerden oluşan bir liste içeren bir dizeniz varsa, dizeyi tek tek
+değerlerden oluşan bir diziye bölmek için split yöntemini kullanabilirsiniz.

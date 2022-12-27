@@ -1,0 +1,45 @@
+AsyncConfiguration
+
+
+                                    ThreadPoolTaskExecutor ?
+
+1-) ThreadPoolTaskExecutor, görevleri yürütmek için otomatik olarak bir iş parçacığı havuzu oluşturacak ve yönetecektir.
+Bir görev gönderildiğinde, bir kuyruğa eklenir ve uygun olduğunda görevi yürütmek için bir iş parçacığı atanır.
+
+2-) ThreadPoolTaskExecutor'ın bloklama kuyruğu tabanlı bir yürütücü olduğuna dikkat etmek önemlidir; bu, kuyruk doluysa,
+execute yönteminin görevi yürütmek için bir iş parçacığı kullanılabilir hale gelene kadar bloke olacağı anlamına gelir.
+
+
+                              threadPoolTaskExecutor.setCorePoolSize(2) ?
+                              threadPoolTaskExecutor.setMaxPoolSize(10) ?
+
+1-) setMaxPoolSize yöntemi, ThreadPoolTaskExecutor'ın görevleri yürütmek için oluşturabileceği maksimum iş parçacığı
+sayısını ayarlar. Maksimum havuz boyutunu 10 olarak ayarlarsanız, ThreadPoolTaskExecutor görevleri yürütmek için en
+fazla 10 iş parçacığı oluşturur.
+
+2-) Çekirdek havuz boyutunu maksimum havuz boyutundan daha küçük bir değere ayarladıysanız, ThreadPoolTaskExecutor
+görev talebini karşılamak için maksimum havuz boyutuna kadar gerektiği kadar ek iş parçacığı oluşturacaktır. Ancak,
+kuyruk doluysa ve tüm iş parçacıkları görevleri yürütmekle meşgulse, execute yöntemi görevi yürütmek için bir iş
+parçacığı kullanılabilir hale gelene kadar bloke olur.
+
+3-) Uygulamanızın iş yüküne bağlı olarak maksimum havuz boyutu için uygun bir değer seçmek önemlidir.
+Bu değeri çok düşük ayarlarsanız, havuzda talebi karşılayacak kadar iş parçacığı bulunmayabilir ve bu da
+performansın düşmesine neden olur. Öte yandan, çok yüksek ayarlarsanız, ihtiyaç duyulmadıkları halde boşta kalan
+iş parçacıklarını koruyarak kaynakları boşa harcayabilirsiniz.
+
+                                 threadPoolTaskExecutor.setQueueCapacity(100) ?
+
+1-) setQueueCapacity yöntemi, ThreadPoolTaskExecutor tarafından yürütülmeyi bekleyen görevleri tutmak için kullanılan
+kuyruğun kapasitesini ayarlar. Kuyruk kapasitesini 100 olarak ayarlarsanız, ThreadPoolTaskExecutor kuyrukta 100 adede
+kadar görev depolayabilir.
+
+2-) Bir görev, execute yöntemi kullanılarak ThreadPoolTaskExecutor'a gönderildiğinde, kuyruğa eklenir. Görevi yürütmek
+için bir iş parçacığı mevcutsa, görev kuyruktan çıkarılır ve hemen yürütülür. Tüm iş parçacıkları görevleri yürütmekle
+meşgulse, görev kuyruğa eklenir ve bir iş parçacığı kullanılabilir olduğunda yürütülür.
+
+3-) Kuyruk doluysa ve yeni bir görev gönderilirse execute yöntemi, görevi yürütmek için bir iş parçacığı kullanılabilir
+hale gelene veya görev kuyruğa eklenene kadar bloke olur.
+
+4-) Uygulamanızın iş yüküne bağlı olarak kuyruk kapasitesi için uygun bir değer seçmek önemlidir. Çok düşük
+ayarlarsanız, kuyruk hızla dolabilir ve bu da daha düşük performansa neden olabilir. Öte yandan, çok yüksek
+ayarlarsanız, yürütülmeyen büyük bir görev kuyruğu tutarak kaynakları boşa harcayabilirsiniz.

@@ -1,0 +1,13 @@
+UserController
+
+                   CompletableFuture.allOf(users1,users2,users3,users4,users5,users6).join() ?
+
+1-) Bu kod, her biri asenkron olarak findAllUsers yöntemini gerçekleştiren altı CompletableFuture oluşturuyor.
+CompletableFuture.allOf yöntemi daha sonra devam etmeden önce tüm CompletableFuture'ların tamamlanmasını beklemek için
+kullanılır. Tüm CompletableFuture'lar tamamlandığında, yöntem HttpStatus.OK durumuna sahip bir ResponseEntity döndürür.
+
+2-) allOf yönteminin bir değer döndürmediğine dikkat etmek önemlidir, bu nedenle elde edilen kullanıcı listesi yanıta
+dahil edilmeyecektir. Birleştirilmiş kullanıcı listesini arayan kişiye döndürmek istiyorsanız, farklı bir yaklaşım
+kullanmanız gerekir. Bir seçenek, her bir CompletableFuture üzerinde CompletableFuture.join yöntemini kullanarak her
+bir asenkron işlemin sonucunu almak ve bunları tek bir liste halinde birleştirmek olabilir; bu liste daha sonra yanıtta
+döndürülebilir.

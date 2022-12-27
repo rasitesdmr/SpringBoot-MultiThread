@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+
+  postgresql:
+    image: postgres:10.4
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: thread
+    networks:
+      - comment
+
+networks:
+  comment:
+    driver: bridge
