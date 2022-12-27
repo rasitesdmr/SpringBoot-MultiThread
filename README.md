@@ -14,19 +14,19 @@ docker-compose down -v
 
 * Web Sayfası : https://www.mockaroo.com/
 
-<img src="th1">
+<img src="https://github.com/rasitesdmr/SpringBoot-MultiThread/blob/master/image/th1.png">
 
-<img src="th2">
+<img src="https://github.com/rasitesdmr/SpringBoot-MultiThread/blob/master/image/th2.png">
 
 ## 📌 Controller
 
 ## ▶️(localhost:8080/thread/createUser)
 
-<img src="th3">
+<img src="https://github.com/rasitesdmr/SpringBoot-MultiThread/blob/master/image/th3.png">
 
-<img src="th4">
+<img src="https://github.com/rasitesdmr/SpringBoot-MultiThread/blob/master/image/th4.png">
 
-<img src="th5">
+<img src="https://github.com/rasitesdmr/SpringBoot-MultiThread/blob/master/image/th5.png">
 
 * Gelin nasıl çalışıyor ona bakalım. 
 * Şimdi aynı anda 2 tane doysa yükledim ve bu dosyanın içindeki bilgileri database yazdırdım.
@@ -36,13 +36,13 @@ docker-compose down -v
 
 ## ▶️(localhost:8080/thread/tenThread)
 
-<img src="th6">
+<img src="https://github.com/rasitesdmr/SpringBoot-MultiThread/blob/master/image/th6.png">
 
-<img src="th7">
+<img src="https://github.com/rasitesdmr/SpringBoot-MultiThread/blob/master/image/th7.png">
 
-<img src="th8">
+<img src="https://github.com/rasitesdmr/SpringBoot-MultiThread/blob/master/image/th8.png">
 
-<img src="th9">
+<img src="https://github.com/rasitesdmr/SpringBoot-MultiThread/blob/master/image/th9.png">
 
 * Gelin nasıl çalışıyor ona bakalım. 
 * Bizim Thread havuzumuzda max 10 tane thread var.
